@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+<style>
+      .container{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+
+      align-items: center;
+      flex-direction: column;
+  }
+
+    .row{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      max-width: 400px;
+      padding: 1rem;
+    }
+    
+    .container h1, .container p, .container a{
+      text-align: center;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .container h1{
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+  @media screen and (max-width: 400px){
+    .container{
+      width: 100vw;
+    }
+
+    .container h1{
+      font-size: 3rem;
+    }
+
+  }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div >
+                <div id="countUp">
+                    <h1  id="count">0</h1>
+                    <p class="text">Page not found</p>
+                    <p class="text">Either there was a error in the matrix or you typed the wrong URL</p>
+                     <p href="home"><a href="home">let's take you back</a></p>
+                </div>
+            </div>
+        </div>
+    </div>            
+<script>
+    for (var i = 0; i <405; i++) { 
+        (function(i) {
+        var timeToStartNote = 4 * i;
+        setTimeout(function() {
+            document.querySelector("#count").textContent=i
+        }, timeToStartNote);
+        })(i)
+    }
+
+</script>
+</body>
+</html>

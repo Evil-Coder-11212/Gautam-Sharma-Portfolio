@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}{{blogs.title}} | {{blogs.author}}{% endblock title %}
+{% block body %}
+<div class="full-width flex-center-all-col">
+    <div class="blogs-details">
+        <h1>{{blogs.author}}</h1>
+        <h2>{{blogs.title}}</h2>
+        <p>{% if blogs.paragraph_1 is None %}  {% else %} {{blogs.paragraph_1}} {% endif %}</p>
+        <p>{% if blogs.paragraph_2 is None %}  {% else %} {{blogs.paragraph_2}} {% endif %}</p>
+        <p>{% if blogs.paragraph_3 is None %}  {% else %} {{blogs.paragraph_3}} {% endif %}</p>
+        <p>{% if blogs.paragraph_4 is None %}  {% else %} {{blogs.paragraph_4}} {% endif %}</p>
+        <h1>{{blog.email}}</h1>
+    </div>
+    <a href="blogs">Back</a>
+        
+</div>
+{% endblock body %}

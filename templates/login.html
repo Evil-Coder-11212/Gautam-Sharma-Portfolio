@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block body %}
+<div class="flex-center">
+  <h1>Login</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <div>
+      <label>Username: </label>
+      <input placeholder="Enter your username" type="text" name="username" required/>
+    </div>
+
+    <div>
+      <label>Password: </label>
+      <input
+        placeholder="Enter your password"
+        type="password"
+        name="password" required
+      />
+    </div>
+    <button type="submit">Submit</button>
+    <a href="/signup">Don't have an account, create one </a>
+  </form>
+</div>
+{% endblock body %} {% block title %}Login{% endblock title %}

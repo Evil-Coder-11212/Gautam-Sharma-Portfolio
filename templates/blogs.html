@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    {% if user.is_authenticated %}
+    <div class="blogs-list full flex-center-all-col">
+        <h1>All Blogs</h1>
+        <div class="wrap-flex">
+            {% for blog in object_list %}
+                <a href="{% url 'blog-details' blog.pk %}">
+                <div class="item"> 
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=394&q=80" alt="Image coult not be load"/>
+                    </div>
+                    <div>
+                        <p>Date: {{blog.created_date}}</p>
+                        <h4>All Blogs</h4>
+                        <p class="blog--title">{{blog.title}}</p>
+                        <p>By {{blog.author}}</p>
+                    </div>
+                </div></a>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+    <div class="redirected-login">
+        <h1> Login to view post </h1>
+        <a href="login" >Login</a>
+    </div>
+    {% endif %}
+{% endblock body %}
